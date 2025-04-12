@@ -540,3 +540,33 @@ body {
   .next-button {
     background: linear-gradient(45deg, #ff6ec4, #a485ff);
   }
+/* Add these at the end of your style.css file */
+
+/* Fix mobile vertical spacing */
+@media screen and (max-width: 480px) {
+  .button {
+    margin-top: 60px !important; /* Gives more space for the cake */
+  }
+  
+  .navigation-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  
+  .instructions {
+    margin-top: 10px !important;
+  }
+  
+  /* Improve touch targets for mobile */
+  .candle, .button, .sound-control, .nav-button {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+}
+
+/* Fix iOS height issues */
+@supports (-webkit-touch-callout: none) {
+  html, body {
+    height: -webkit-fill-available;
+  }
+}
